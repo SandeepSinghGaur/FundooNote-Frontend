@@ -1,0 +1,93 @@
+.mainBox{
+    border: solid lightgray 1px;
+    border-radius: 8px;
+    width: 450px;
+    height: 450px;
+    top: 70%;
+    left: 30%;
+    margin-left: 400px;
+    margin-top: 110px;
+
+}
+
+.signin{
+    line-height: 1;
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: -20x;
+    position: absolute;
+    top:180px;
+    left:590px;
+}
+#filled-required{
+border: solid rgb(7, 152, 248);
+width: 350px;
+height: 25px;
+border-radius: 8px;
+background: white;
+}
+.labelName{
+    position: relative;
+    top: 10px;
+    right: 120px;
+    z-index: 1;
+    background: white;
+    color:rgb(7, 152, 248);
+    padding: 0 4px;
+}
+.forgot-email{
+
+    text-align: left;
+    margin-left: 34px;
+    color:rgb(7, 152, 248);
+    margin-top: 10px;
+}
+.desc{
+    line-height: 0.5;
+    text-align: left;
+    margin-left: 34px;
+    margin-top: 10px;
+    color: rgb(78, 76, 78);
+    font-weight: 390;
+    font-size: 14px;
+    
+}
+.desc a{
+    text-decoration: none;
+    color: rgb(7, 152, 248);
+}
+.create-Account{
+    text-align: left;
+    margin-left: 34px;
+    margin-top: 10px;
+    color: rgb(7, 152, 248);
+    font-weight: 500;
+
+}
+.create-Account button{
+    margin-left: 310px;
+    height: 35px;
+    width: 75px;
+    margin-top: -10px;
+    background: rgb(7, 152, 248) ;
+    border-radius: 5px;
+    color: white;
+    border: none;
+
+}
+.inside{
+    
+    display: inline-block;
+    margin: 15px;
+    color: rgb(78, 76, 78);
+    font-size: 14px;
+
+}
+.inside1{
+    display: inline-block;
+    margin: 15px 105px 15px -105px;
+    color: rgb(78, 76, 78);
+    font-size: 14px;
+}
+
+
