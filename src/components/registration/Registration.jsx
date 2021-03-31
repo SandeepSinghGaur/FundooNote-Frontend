@@ -1,5 +1,4 @@
 import React from 'react';
-import GoogleLogo from './../..//assests/google-2015.svg';
 import RegisterLogo from './../..//assests/RegisterLogo.svg';
 import './Registration.scss';
 import TextField from '@material-ui/core/TextField';
@@ -8,9 +7,15 @@ function Registration() {
     return (
         <div>
             <div className="mainBox1">
-                <div className="mainLogo">
-                    <img src={GoogleLogo} alt='Google-Logo' />
-                </div>
+                
+                  <div className="mainLogo" >
+             <span style={{ color: "#0606f8"  }}>F</span>
+             <span style={{ color: "#d10303" }}>u</span>
+             <span style={{ color: "#f0b000" }}>n</span>
+             <span style={{ color: "#0606f8" }}>d</span>
+             <span style={{ color: "green" }}>o</span>
+             <span style={{ color: "#d10303" }}>o</span>
+           </div> 
                 <div className="desc-Account">
                     <div>Create Your Fundoo Account</div>
                 </div><br></br>
@@ -19,7 +24,7 @@ function Registration() {
                 </div>
                 <form className="userInfo" autoComplete="off">
                     <TextField id="outlined-basic1" label="First Name" InputProps={{ disableUnderline: true }} />
-                    <TextField id="outlined-basic2" label="Last Name" InputProps={{ disableUnderline: true }} />
+                    <TextField id="outlined-basic2" label="Last Name" InputProps={{ disableUnderline: true }} /><br></br><br></br>
                     <TextField id="outlined-basic3" label="User Email" InputProps={{ disableUnderline: true }} />
 
                 </form>

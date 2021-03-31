@@ -1,14 +1,19 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
-import GoogleLogo from './../..//assests/google-2015.svg';
 import './Login.scss'
 function Login() {
     return (
         <div>
             <div className="mainBox">
-                <div className="MainLogo">
-                    <img src={GoogleLogo} alt='Google-Logo' />
-                </div>
+               
+                 <div className="app_name" variant="h5" >
+             <span style={{ color: "#0606f8" }}>F</span>
+             <span style={{ color: "#d10303" }}>u</span>
+             <span style={{ color: "#f0b000" }}>n</span>
+             <span style={{ color: "#0606f8" }}>d</span>
+             <span style={{ color: "green" }}>o</span>
+             <span style={{ color: "#d10303" }}>o</span>
+           </div>
                 <div className="signin">
                     <div>Sign in</div>
                 </div><br></br>

@@ -1,15 +1,20 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import './ForgetPassword.scss';
-import GoogleLogo from './../..//assests/google-2015.svg';
 
 function ForgetPassword() {
     return (
         <div>
             <div className="mainBox">
-                <div className="MainLogo">
-                    <img src={GoogleLogo} alt='Google-Logo' />
-                </div>
+                
+                 <div className="app_name" variant="h5" color="textSecondary">
+             <span style={{ color: "#0606f8" }}>F</span>
+             <span style={{ color: "#d10303" }}>u</span>
+             <span style={{ color: "#f0b000" }}>n</span>
+             <span style={{ color: "#0606f8" }}>d</span>
+             <span style={{ color: "green" }}>o</span>
+             <span style={{ color: "#d10303" }}>o</span>
+           </div>
                 <div className="account-Recovery">
                     <div>Account recovery</div>
                 </div><br></br>

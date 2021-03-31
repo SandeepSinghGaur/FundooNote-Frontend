@@ -1,0 +1,67 @@
+.mainbar {
+  background-color: rgb(255, 255, 255, 10);
+  border: solid lightgray 1px;
+  border-radius: 6px;
+  width: 1500px;
+  height: 60px;
+
+
+
+}
+
+.menubar {
+  float: left;
+  margin-top: 13px;
+  margin-left: 19px;
+  margin-right: 7px;
+}
+
+.picture {
+  float: left;
+  margin-left: 10px;
+  margin-top: 6px;
+
+}
+
+.headerTitle {
+  margin: 1%;
+  color: #5f6368;
+  font-size: 22px;
+  font-family: 'Product Sans', Arial, sans-serif;
+  float: left;
+  margin-right: 80px;
+}
+
+.search {
+  height: 75%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  background-color: rgb(238, 238, 238);
+  border-radius: 5px;
+  margin-top: 7px;
+}
+
+.searchIcon {
+  margin: 2%;
+}
+
+.insideSearch {
+  font-size: medium;
+}
+
+
+.buttonContainer {
+  // border: solid;
+  margin-left: 700px;
+
+}
+
+.button {
+  position: relative;
+  left: 5px;
+}
+
+.appsContainer {
+  margin-left: 35px;
+}
