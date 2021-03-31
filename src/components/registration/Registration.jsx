@@ -18,9 +18,9 @@ function Registration() {
                     <img src={RegisterLogo} alt='Register-Logo' />
                 </div>
                 <form className="userInfo" autoComplete="off">
-                    <TextField id="outlined-basic1" label="First Name"  InputProps={{ disableUnderline: true}} />
-                    <TextField id="outlined-basic2" label="Last Name"  InputProps={{ disableUnderline: true }} />
-                    <TextField id="outlined-basic3" label="User Email"  InputProps={{ disableUnderline: true }} />
+                    <TextField id="outlined-basic1" label="First Name" InputProps={{ disableUnderline: true }} />
+                    <TextField id="outlined-basic2" label="Last Name" InputProps={{ disableUnderline: true }} />
+                    <TextField id="outlined-basic3" label="User Email" InputProps={{ disableUnderline: true }} />
 
                 </form>
                 <div className="a">
@@ -30,14 +30,18 @@ function Registration() {
                     Use my current email address instead
                 </div>
                 <form className="userInf" autoComplete="on">
-                    <TextField id="outlined-basic4" label="Password" InputProps={{ disableUnderline: true} }/>
-                    <TextField id="outlined-basic5" label="Confirm" InputProps={{ disableUnderline: true}} />
+                    <TextField id="outlined-basic4" label="Password" InputProps={{ disableUnderline: true }} />
+                    <TextField id="outlined-basic5" label="Confirm" InputProps={{ disableUnderline: true }} />
                 </form>
                 <div className="a">
                     Use 8 or more character with a mix of letters,numbers & symbols.
                 </div>
                 <div className="inputCheckBox">
-                <input type="checkBox" ></input>show password
+                    <input type="checkBox" ></input>show password
+                </div><br></br><br></br>
+                <div className="create-Account">
+                    sign in instead
+                    <button type="button">Next</button>
                 </div>
             </div>
         </div>

@@ -7,9 +7,9 @@ import ForgetPassword from '../../components/forgetPassword/ForgetPassword'
 const Dashboard = () => {
     return (
         <div className="mainClass">
-              {/* <Login /> */}
-             <Registration/> 
-             {/* <ForgetPassword/> */}
+            <Login />
+            <Registration />
+            <ForgetPassword />
         </div>
 
     )
