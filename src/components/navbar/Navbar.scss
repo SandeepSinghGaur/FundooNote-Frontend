@@ -65,3 +65,36 @@
 .appsContainer {
   margin-left: 35px;
 }
+
+.sidebar {
+  margin-top: 10px;
+}
+
+.opt {
+  width: 200px;
+  height: 35px;
+  // border: solid 1px gray;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  margin-left: 5px;
+  display: block;
+  font-size: 14px;
+  text-align: left;
+  border-radius: 0px 25px 25px 0px;
+  font-weight: 500;
+
+}
+
+.opt:hover {
+  background: rgb(243, 223, 113);
+}
+
+.fa {
+  margin-right: 20px;
+  font-size: 26px !important;
+  width: 20px;
+  // border: solid;
+  height: 20px;
+
+}
