@@ -5,7 +5,6 @@ function Login() {
     return (
         <div>
             <div className="mainBox">
-               
                  <div className="app_name" variant="h5" >
              <span style={{ color: "#0606f8" }}>F</span>
              <span style={{ color: "#d10303" }}>u</span>

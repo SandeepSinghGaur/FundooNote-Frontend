@@ -8,6 +8,23 @@ import DnsRoundedIcon from "@material-ui/icons/DnsRounded";
 import SettingsSharpIcon from "@material-ui/icons/SettingsOutlined";
 import AppsRoundedIcon from "@material-ui/icons/AppsRounded";
 import IconButton from "@material-ui/core/IconButton";
+import NoteIcon from './../..//assests/NoteIcon.png';
+import EditLabel from './../..//assests/Editlabel.png';
+import ReminderIcon from './../..//assests/Reminder-Icon.png';
+import Archive from './../..//assests/ArchiveIcon.png';
+import Edit from './../..//assests/EditLabel.svg';
+import Trash from './../..//assests/delete.png';
+import TextField from '@material-ui/core/TextField';
+import Pin from './../..//assests/pin note.jpg';
+import collaborator from './../..//assests/contact.png';
+import alarm from './../..//assests/bell-ring-alarm.png';
+import color from './../..//assests/color-palette.png';
+import imageIcon from './../..//assests/imageIcon.png';
+import folder from './../..//assests/Archive.png';
+import more from './../..//assests/more.png';
+import undo from './../..//assests/undo.png';
+import redo from './../..//assests/redo.png';
+
 
 function Navbar() {
     return (
@@ -60,18 +77,64 @@ function Navbar() {
                     </div>
                 </div>
             </header>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
-            <div className="sidebar">
-                <a href="#" className="opt"><i class="fa fa-lightbulb-o " ></i> Notes</a>
-                <a href="#" className="opt"><i class="fa fa-bell-o "></i> Reminders</a>
-                <a href="#" className="opt"> <i class='fa fa-arrow-right '></i>Hello Geeks</a>
-                <a href="#" className="opt"><i class='fa fa-pencil '></i>Edit labels</a>
-                <a href="#" className="opt"> <i class="fa fa-floppy-o "></i> Archive</a>
-                <a href="#" className="opt"><i class="fa fa-trash "></i> Trash</a>
+            <div className="sideBar">
+                <div className="notes">
+                    <img src={NoteIcon} alt="NoteIcon" />
+                    <div className="noteContent">
+                        Notes
+                    </div>
+                </div>
+                <div className="notes">
+                    <img src={ReminderIcon} alt="ReminderIcon" />
+                    <div className="noteContent">
+                        Reminders
+                    </div>
+                </div>
+
+                <div className="notes">
+                    <img src={EditLabel} alt="EditLabel" />
+                    <div className="noteContent">
+                        Hello Geeks
+                    </div>
+                </div>
+                <div className="notes">
+                    <img src={Edit} alt="Edit" />
+                    <div className="noteContent">
+                        Edit labels
+                    </div>
+                </div>
+                <div className="notes">
+                    <img src={Archive} alt="Archive" />
+                    <div className="noteContent">
+                        Archive
+                    </div>
+                </div>
+                <div className="notes">
+                    <img src={Trash} alt="Trash" />
+                    <div className="noteContent">
+                        Trash
+                    </div>
+                </div>
+            </div>
+            <div className="infoContent">
+                <div className="infoBox">
+                    <img className="pinImage" src={Pin} alt="Pin" />
+                    <TextField id="titleNote" label="Title" InputLabelProps={{ style: { fontSize: '20px', }, }} InputProps={{ disableUnderline: true }} />
+                    <TextField id="takeNote" label="Take a note..." InputProps={{ disableUnderline: true }} />
+                    <div className="iconBox">
+                        <img className="allIcon" src={alarm} alt="alarm" />
+                        <img className="allIcon" src={collaborator} alt="collaborator" />
+                        <img className="allIcon" src={color} alt="color" />
+                        <img className="allIcon" src={imageIcon} alt="imageIcon" />
+                        <img className="allIcon" src={folder} alt="folder" />
+                        <img className="allIcon" src={more} alt="more" />
+                        <img className="allIcon" src={undo} alt="undo" />
+                        <img className="allIcon" src={redo} alt="redo" />
+                        <div className="closeIcon">Close</div>
+                    </div>
+                </div>
             </div>
         </div>
-
-
 
     )
 }
