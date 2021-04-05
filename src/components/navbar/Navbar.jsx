@@ -130,7 +130,22 @@ function Navbar() {
                         <img className="allIcon" src={more} alt="more" />
                         <img className="allIcon" src={undo} alt="undo" />
                         <img className="allIcon" src={redo} alt="redo" />
-                        <div className="closeIcon">Close</div>
+                        <div className="closeIcon" style={{ float:`right`,fontSize:`16px` }} >Close</div>
+                    </div>
+                </div>
+            </div>
+            <div className="infoContent1">
+                <div className="infoBox1">
+                    <img className="pinImage" src={Pin} alt="Pin" />
+                    <TextField id="titleNote" label="Hello Geek" InputLabelProps={{ style: { fontSize: '30px', },  }} InputProps={{ disableUnderline: true }} />
+                    <TextField id="takeNote" label="Today i will complete dashboard UI" InputProps={{ disableUnderline: true }} />
+                    <div className="iconBox1">
+                        <img className="allIcon1" src={alarm} alt="alarm" />
+                        <img className="allIcon1" src={collaborator} alt="collaborator" />
+                        <img className="allIcon1" src={color} alt="color" />
+                        <img className="allIcon1" src={imageIcon} alt="imageIcon" />
+                        <img className="allIcon1" src={folder} alt="folder" />
+                        <img className="allIcon1" src={more} alt="more" />
                     </div>
                 </div>
             </div>

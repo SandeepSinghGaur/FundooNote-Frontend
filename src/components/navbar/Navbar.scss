@@ -126,10 +126,8 @@
 }
 .infoContent{
 width: 80%;
-height: 600px;
+height: 210px;
 float: left;
-
-
 }
 .infoBox{
 height: 150px;
@@ -189,4 +187,31 @@ margin-right: 200px;
 .closeIcon{
 padding-right: 50px;
 }
+.infoContent1{
+  width: 60%;
+  height: 250px;
+  float: left;
+  }
+  .infoBox1{
+    height: 170px;
+    width: 40%;
+    position: relative;
+    
+    margin: 30px auto;
+    border-radius: 15px;
+    box-shadow: 2px 2px 3px 2px lightgray;
+    }
+    .iconBox1{
+     // border: solid;
+      height: 23px;
+     // margin-top: 20px;
+     // margin-bottom: 10px;
+    }
+    .allIcon1{
+      margin:  0px 18px;
+      //float: left;
+      margin-bottom: 10px;
+      padding-top: 50px;
+    
+    }
 

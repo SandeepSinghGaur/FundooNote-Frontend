@@ -1,41 +1,77 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import './Login.scss'
+import Services from '../../Services/userServices'
+
+const services = new Services();
+
+
 function Login() {
+    const [email, setEmail] = React.useState("");
+    const [password, setPassword] = React.useState("");
+    const handleLogin = () => {
+        let data = {
+            email: email,
+            password: password,
+        };
+        services
+            .SignIn(data)
+            .then((data) => {
+                console.log(data);
+                console.log(
+                    "Login successful" + JSON.stringify(data.data.result.accessToken)
+                );
+                localStorage.setItem("loginToken", data.data.result.accessToken);
+            })
+            .catch((err) => {
+                console.log("Error", err);
+            });
+    };
     return (
         <div>
             <div className="mainBox">
-                 <div className="app_name" variant="h5" >
-             <span style={{ color: "#0606f8" }}>F</span>
-             <span style={{ color: "#d10303" }}>u</span>
-             <span style={{ color: "#f0b000" }}>n</span>
-             <span style={{ color: "#0606f8" }}>d</span>
-             <span style={{ color: "green" }}>o</span>
-             <span style={{ color: "#d10303" }}>o</span>
-           </div>
+                <div className="app_name" variant="h5" >
+                    <span style={{ color: "#0606f8" }}>F</span>
+                    <span style={{ color: "#d10303" }}>u</span>
+                    <span style={{ color: "#f0b000" }}>n</span>
+                    <span style={{ color: "#0606f8" }}>d</span>
+                    <span style={{ color: "green" }}>o</span>
+                    <span style={{ color: "#d10303" }}>o</span>
+                </div>
                 <div className="signin">
                     <div>Sign in</div>
                 </div><br></br>
                 <div className="useAccount">
                     <div>Use your Fundoo Account</div>
-                </div><br></br>
+                </div>
                 <span className="labelName">Email or phone</span>
                 <TextField
                     required
                     id="filled-required"
                     defaultValue=" "
                     variant="filled"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                /><br></br>
+                <span className="labelName">Password</span>
+                <TextField
+                    required
+                    id="filled-required"
+                    defaultValue=" "
+                    variant="filled"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                 />
-                <div class="forgot-email">
+                <div className="forgot-email">
                     Forgot email?
-                   </div><br></br><br></br>
+                   </div>
                 <div className="desc">
                     Not your computer? Use Guest mode to sign in privately.<br></br>
                     <p><a href="sandeepgaurdec13@gmail.com">Learn More</a></p>
                 </div>
                 <div className="create-Account">
                     Create Account
-                    <button type="button">Next</button>
+                    <button onClick={handleLogin} type="button">Next</button>
                 </div>
             </div >
             <div className="footer">
