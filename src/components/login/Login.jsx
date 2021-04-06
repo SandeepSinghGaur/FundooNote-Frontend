@@ -66,7 +66,7 @@ function Login() {
                     Forgot email?
                    </div>
                 <div className="desc">
-                    Not your computer? Use Guest mode to sign in privately.<br></br>
+                    Not your computer? Use Guest mode to sign in privately.<br></br><br></br>
                     <p><a href="sandeepgaurdec13@gmail.com">Learn More</a></p>
                 </div>
                 <div className="create-Account">

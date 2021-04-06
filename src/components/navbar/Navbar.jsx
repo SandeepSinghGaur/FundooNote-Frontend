@@ -12,7 +12,7 @@ import NoteIcon from './../..//assests/NoteIcon.png';
 import EditLabel from './../..//assests/Editlabel.png';
 import ReminderIcon from './../..//assests/Reminder-Icon.png';
 import Archive from './../..//assests/ArchiveIcon.png';
-import Edit from './../..//assests/EditLabel.svg';
+import Edit from './../..//assests/pencil.png';
 import Trash from './../..//assests/delete.png';
 import TextField from '@material-ui/core/TextField';
 import Pin from './../..//assests/pin note.jpg';
@@ -20,7 +20,7 @@ import collaborator from './../..//assests/contact.png';
 import alarm from './../..//assests/bell-ring-alarm.png';
 import color from './../..//assests/color-palette.png';
 import imageIcon from './../..//assests/imageIcon.png';
-import folder from './../..//assests/Archive.png';
+import folder from './../..//assests/folder2.png';
 import more from './../..//assests/more.png';
 import undo from './../..//assests/undo.png';
 import redo from './../..//assests/redo.png';
@@ -137,8 +137,9 @@ function Navbar() {
             <div className="infoContent1">
                 <div className="infoBox1">
                     <img className="pinImage" src={Pin} alt="Pin" />
-                    <TextField id="titleNote" label="Hello Geek" InputLabelProps={{ style: { fontSize: '30px', },  }} InputProps={{ disableUnderline: true }} />
-                    <TextField id="takeNote" label="Today i will complete dashboard UI" InputProps={{ disableUnderline: true }} />
+                   
+                     <TextField id="titleNote" label="Title" InputLabelProps={{ style: { fontSize: '20px', }, }} InputProps={{ disableUnderline: true }} />
+                    <TextField id="takeNote" label="Take a note..." InputProps={{ disableUnderline: true }} />
                     <div className="iconBox1">
                         <img className="allIcon1" src={alarm} alt="alarm" />
                         <img className="allIcon1" src={collaborator} alt="collaborator" />
