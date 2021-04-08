@@ -28,8 +28,8 @@ function Login() {
             });
     };
     return (
-        <div>
-            <div className="mainBox">
+        <div className="login-main-container">
+            <div className="mainBoxLogin">
                 <div className="app_name" variant="h5" >
                     <span style={{ color: "#0606f8" }}>F</span>
                     <span style={{ color: "#d10303" }}>u</span>
@@ -40,47 +40,47 @@ function Login() {
                 </div>
                 <div className="signin">
                     <div>Sign in</div>
-                </div><br></br>
+                </div>
                 <div className="useAccount">
                     <div>Use your Fundoo Account</div>
                 </div>
-                <span className="labelName">Email or phone</span>
+                <div className="login-field-div">
                 <TextField
+                   label="Email"
                     required
-                    id="filled-required"
-                    defaultValue=" "
+                    id="filled-required-Login"
+                    defaultValue="email"
                     variant="filled"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                /><br></br>
-                <span className="labelName">Password</span>
+                />
+                </div>
+                <div className="login-field-div">
                 <TextField
+                 label="Password"
                     required
-                    id="filled-required"
+                    id="filled-required-Login"
                     defaultValue=" "
                     variant="filled"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
-                <div className="forgot-email">
+                </div>
+                <div className="forgot-email-Login">
                     Forgot email?
                    </div>
-                <div className="desc">
+                <div className="desc-Login">
                     Not your computer? Use Guest mode to sign in privately.<br></br><br></br>
                     <p><a href="sandeepgaurdec13@gmail.com">Learn More</a></p>
                 </div>
-                <div className="create-Account">
+                <div className="create-Account-Login">
                     Create Account
                     <button onClick={handleLogin} type="button">Next</button>
                 </div>
             </div >
-            <div className="footer">
-                <div className="inside1">English(United Kingdom)</div>
-                <div className="inside">Help</div>
-                <div className="inside">Privacy</div>
-                <div className="inside">Terms</div>
             </div>
-        </div>
+    
+        
 
 
     )

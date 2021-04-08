@@ -4,9 +4,9 @@ import Login from '../../components/login/Login'
 
 const DashboardLogin = () => {
     return (
-        <div className="mainClass">
+        <>
             <Login />
-        </div>
+        </>
 
     )
 }

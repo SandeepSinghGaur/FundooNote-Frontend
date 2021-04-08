@@ -1,10 +1,48 @@
+.mainBox-Reset {
+    border: solid lightgray 1px;
+    border-radius: 8px;
+    width: 450px;
+    height: 450px;
+    //top: 70%;
+    //left: 30%;
+    //margin-left: 400px;
+    //margin-top: 110px;
+    margin: 5% auto;
+
+}
 .resetPass{
     line-height: 1;
     font-weight: 500;
     font-size: 20px;
     margin-top: -20x;
-    position: absolute;
-    top: 190px;
-    left: 560px;
+    // position: absolute;
+    // top: 190px;
+    // left: 560px;
 
+}
+#filled-required-Reset{
+    border: solid rgb(7, 152, 248);
+    width: 350px;
+    height: 25px;
+    border-radius: 8px;
+    background: white;
+}
+.labelName-Reset,.labelName-Reset1{
+    position: relative;
+    top: 10px;
+    /* right: 120px; */
+    z-index: 1;
+    background: white;
+    color: #0798f8;
+    padding: 0 4px;
+    left: 50px;
+    width: 110px;
+}
+.labelName-Reset{
+
+    width: 130px;
+}
+.space{
+    //border: solid;
+    height: 30px;
 }

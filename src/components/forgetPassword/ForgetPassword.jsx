@@ -4,8 +4,8 @@ import './ForgetPassword.scss';
 
 function ForgetPassword() {
     return (
-        <div>
-            <div className="mainBox">
+        <div className="mainBox-forgetpassword-inside">
+            <div className="mainBox-Forget">
                 
                  <div className="app_name" variant="h5" color="textSecondary">
              <span style={{ color: "#0606f8" }}>F</span>
@@ -17,19 +17,20 @@ function ForgetPassword() {
            </div>
                 <div className="account-Recovery">
                     <div>Account recovery</div>
-                </div><br></br>
-                <div className="useAccount">
+                </div>
+                <div className="useAccount-Forget">
                     <div>Recover your Fundoo Account</div>
-                </div><br></br>
-                <span className="labelName">Email or phone</span>
+                </div>
+               
                 <TextField
+                placeholder="Email"
                     required
-                    id="filled-required"
+                    id="filled-required-Forget"
                     defaultValue=" "
                     variant="filled"
-                /><br></br><br></br>
+                />
                 <div className="create-Account">
-                    Forget email
+                   <div className="forget-Email">Forget email</div>
                     <button type="button">Next</button>
                 </div>
             </div>

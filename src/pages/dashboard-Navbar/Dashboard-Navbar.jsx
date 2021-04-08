@@ -3,9 +3,9 @@ import Navbar from '../../components/navbar/Navbar'
 
 const DashboardNavbar = () => {
     return (
-        <div className="mainClass">
+        <>
             <Navbar />
-        </div>
+        </>
 
     )
 }

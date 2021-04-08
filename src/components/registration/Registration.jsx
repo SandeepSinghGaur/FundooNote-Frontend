@@ -5,7 +5,7 @@ import TextField from '@material-ui/core/TextField';
 
 function Registration() {
     return (
-        <div>
+        <div className="registration-main">
             <div className="mainBox1">
                 
                   <div className="mainLogo" >
@@ -18,32 +18,30 @@ function Registration() {
            </div> 
                 <div className="desc-Account">
                     <div>Create Your Fundoo Account</div>
-                </div><br></br>
+                </div>
                 <div className="userInfoLogo">
-                    <img src={RegisterLogo} alt='Register-Logo' />
-                </div>
-                <form className="userInfo" autoComplete="off">
+                    <img src={RegisterLogo} alt='Register-Logo' className="register-logo-main"/>
+                
+                <div className="userInfo">
+                    <div className="userInf"> 
                     <TextField id="outlined-basic1" label="First Name" InputProps={{ disableUnderline: true }} />
-                    <TextField id="outlined-basic2" label="Last Name" InputProps={{ disableUnderline: true }} /><br></br><br></br>
+                    <TextField id="outlined-basic2" label="Last Name" InputProps={{ disableUnderline: true }} />
+                    </div>
+                    
                     <TextField id="outlined-basic3" label="User Email" InputProps={{ disableUnderline: true }} />
-
-                </form>
-                <div className="a">
-                    <div>You can use letters,numbers & periods</div>
-                </div><br></br>
-                <div className="create-Account1">
-                    Use my current email address instead
-                </div>
-                <form className="userInf" autoComplete="on">
+                    <div className="userInf" >
                     <TextField id="outlined-basic4" label="Password" InputProps={{ disableUnderline: true }} />
                     <TextField id="outlined-basic5" label="Confirm" InputProps={{ disableUnderline: true }} />
-                </form>
+                </div>
+                </div>
+                </div>
+               
                 <div className="a">
                     Use 8 or more character with a mix of letters,numbers & symbols.
                 </div>
                 <div className="inputCheckBox">
                     <input type="checkBox" ></input>show password
-                </div><br></br><br></br>
+                </div>
                 <div className="create-Account">
                     sign in instead
                     <button type="button">Next</button>

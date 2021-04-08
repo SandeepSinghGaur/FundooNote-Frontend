@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import GoogleKeepdp from './../..//assests/GoogleKeepdp.png';
 import MenuBar from './../..//assests/menuBar.png';
 import './Navbar.scss';
@@ -27,16 +27,62 @@ import redo from './../..//assests/redo.png';
 
 
 function Navbar() {
+    const [menuButtonStatus, setMenuButtonStatus] = useState(false)
+    const handleMenuClick = () => {
+        if (menuButtonStatus) {
+            setMenuButtonStatus(false);
+        }
+        else {
+            setMenuButtonStatus(true);
+        }
+    }
+    const navIcons = (
+        <div className="sideBar">
+            <div className="notes">
+                <img src={NoteIcon} alt="NoteIcon" />
+                <div className="noteContent">
+                    Notes
+            </div>
+            </div>
+            <div className="notes">
+                <img src={ReminderIcon} alt="ReminderIcon" />
+                <div className="noteContent">
+                    Reminders
+            </div>
+            </div>
+
+            <div className="notes">
+                <img src={EditLabel} alt="EditLabel" />
+                <div className="noteContent">
+                    Hello Geeks
+            </div>
+            </div>
+            <div className="notes">
+                <img src={Edit} alt="Edit" />
+                <div className="noteContent">
+                    Edit labels
+            </div>
+            </div>
+            <div className="notes">
+                <img src={Archive} alt="Archive" />
+                <div className="noteContent">
+                    Archive
+            </div>
+            </div>
+            <div className="notes">
+                <img src={Trash} alt="Trash" />
+                <div className="noteContent">
+                    Trash
+            </div>
+            </div>
+        </div>
+    )
     return (
         <div className="navbar">
-            <header>
-                <div className="mainbar">
-                    <div className="menubar">
-                        <img src={MenuBar} alt="Menubar" />
-                    </div>
-                    <div className="picture">
-                        <img src={GoogleKeepdp} alt="GoogleKeepdp" />
-                    </div>
+            <div className="mainbar">
+                <div className="navbar-main-compo">
+                    <img src={MenuBar} alt="Menubar" className="nav-menubar" onClick={() => handleMenuClick()} />
+                    <img src={GoogleKeepdp} alt="GoogleKeepdp" className="nav-menubar-keepicon" />
                     <div className="headerTitle">
                         <span style={{ color: "#0606f8" }}>F</span>
                         <span style={{ color: "#d10303" }}>u</span>
@@ -50,103 +96,87 @@ function Navbar() {
                             <SearchIcon />
                         </div>
                         <div className="insideSearch">Search</div>
-                        <div className="buttonContainer">
-                            <div className="button">
-                                <IconButton aria-label="open drawer">
-                                    <ReplayOutlinedIcon />
-                                </IconButton>
-                            </div>
-                        </div>
-                        <div className="button">
-                            <IconButton aria-label="open drawer">
-                                <DnsRoundedIcon />
-                            </IconButton>
-                        </div>
-                        <div className="button">
-                            <IconButton aria-label="open drawer">
-                                <SettingsSharpIcon />
-                            </IconButton>
-                        </div>
-                        <div className="appsContainer">
-                            <div className="button">
-                                <IconButton aria-label="open drawer">
-                                    <AppsRoundedIcon />
-                                </IconButton>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
-            <div className="sideBar">
-                <div className="notes">
-                    <img src={NoteIcon} alt="NoteIcon" />
-                    <div className="noteContent">
-                        Notes
-                    </div>
-                </div>
-                <div className="notes">
-                    <img src={ReminderIcon} alt="ReminderIcon" />
-                    <div className="noteContent">
-                        Reminders
-                    </div>
-                </div>
 
-                <div className="notes">
-                    <img src={EditLabel} alt="EditLabel" />
-                    <div className="noteContent">
-                        Hello Geeks
                     </div>
-                </div>
-                <div className="notes">
-                    <img src={Edit} alt="Edit" />
-                    <div className="noteContent">
-                        Edit labels
-                    </div>
-                </div>
-                <div className="notes">
-                    <img src={Archive} alt="Archive" />
-                    <div className="noteContent">
-                        Archive
-                    </div>
-                </div>
-                <div className="notes">
-                    <img src={Trash} alt="Trash" />
-                    <div className="noteContent">
-                        Trash
-                    </div>
+                    <IconButton aria-label="open drawer" className="button">
+                                <ReplayOutlinedIcon />
+                            </IconButton>
+                    {/* <div className="buttonContainer">
+                        <div className="button">
+                            <IconButton aria-label="open drawer" className="button">
+                                <ReplayOutlinedIcon />
+                            </IconButton>
+                        </div>
+                    </div> */}
+                    <IconButton aria-label="open drawer" className="button">
+                            <DnsRoundedIcon />
+                        </IconButton>
+                    {/* <div className="button">
+                        <IconButton aria-label="open drawer">
+                            <DnsRoundedIcon />
+                        </IconButton>
+                    </div> */}
+                    <IconButton aria-label="open drawer" className="button">
+                            <SettingsSharpIcon />
+                        </IconButton>
+                    {/* <div className="button">
+                        <IconButton aria-label="open drawer">
+                            <SettingsSharpIcon />
+                        </IconButton>
+                    </div> */}
+                    {/* <div className="button">
+                            <IconButton aria-label="open drawer">
+                                <AppsRoundedIcon />
+                            </IconButton>
+                        </div> */}
+                         <IconButton aria-label="open drawer" className="button">
+                                <AppsRoundedIcon />
+                            </IconButton>
+                    {/* <div className="appsContainer">
+                        
+                    </div> */}
                 </div>
             </div>
+
+            {menuButtonStatus ? navIcons : null}
             <div className="infoContent">
                 <div className="infoBox">
                     <img className="pinImage" src={Pin} alt="Pin" />
-                    <TextField id="titleNote" label="Title" InputLabelProps={{ style: { fontSize: '20px', }, }} InputProps={{ disableUnderline: true }} />
-                    <TextField id="takeNote" label="Take a note..." InputProps={{ disableUnderline: true }} />
-                    <div className="iconBox">
-                        <img className="allIcon" src={alarm} alt="alarm" />
-                        <img className="allIcon" src={collaborator} alt="collaborator" />
-                        <img className="allIcon" src={color} alt="color" />
-                        <img className="allIcon" src={imageIcon} alt="imageIcon" />
-                        <img className="allIcon" src={folder} alt="folder" />
-                        <img className="allIcon" src={more} alt="more" />
-                        <img className="allIcon" src={undo} alt="undo" />
-                        <img className="allIcon" src={redo} alt="redo" />
-                        <div className="closeIcon" style={{ float:`right`,fontSize:`16px` }} >Close</div>
+                    <div className="createnote-title">
+                        <TextField id="titleNote" label="Title" InputLabelProps={{ style: { fontSize: '20px', }, }} InputProps={{ disableUnderline: true }} />
+                        <TextField id="takeNote" label="Take a note..." InputProps={{ disableUnderline: true }} />
+                        <div className="iconBox">
+                            <div className="iconContainer">
+                                <img className="allIcon" src={alarm} alt="alarm" />
+                                <img className="allIcon" src={collaborator} alt="collaborator" />
+                                <img className="allIcon" src={color} alt="color" />
+                                <img className="allIcon" src={imageIcon} alt="imageIcon" />
+                                <img className="allIcon" src={folder} alt="folder" />
+                                <img className="allIcon" src={more} alt="more" />
+                                <img className="allIcon" src={undo} alt="undo" />
+                                <img className="allIcon" src={redo} alt="redo" />
+
+                            </div>
+
+                            <div className="closeIcon"  >Close</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div className="infoContent1">
+            </div> 
+             <div className="infoContent1">
                 <div className="infoBox1">
                     <img className="pinImage" src={Pin} alt="Pin" />
-                   
-                     <TextField id="titleNote" label="Title" InputLabelProps={{ style: { fontSize: '20px', }, }} InputProps={{ disableUnderline: true }} />
-                    <TextField id="takeNote" label="Take a note..." InputProps={{ disableUnderline: true }} />
-                    <div className="iconBox1">
-                        <img className="allIcon1" src={alarm} alt="alarm" />
-                        <img className="allIcon1" src={collaborator} alt="collaborator" />
-                        <img className="allIcon1" src={color} alt="color" />
-                        <img className="allIcon1" src={imageIcon} alt="imageIcon" />
-                        <img className="allIcon1" src={folder} alt="folder" />
-                        <img className="allIcon1" src={more} alt="more" />
+                    <div className="createnote-title1">
+                        <TextField id="titleNote" label="Title" InputLabelProps={{ style: { fontSize: '20px', }, }} InputProps={{ disableUnderline: true }} />
+                        <TextField id="takeNote" label="Take a note..." InputProps={{ disableUnderline: true }} />
+                        <div className="iconBox1">
+                            <img className="allIcon1" src={alarm} alt="alarm" />
+                            <img className="allIcon1" src={collaborator} alt="collaborator" />
+                            <img className="allIcon1" src={color} alt="color" />
+                            <img className="allIcon1" src={imageIcon} alt="imageIcon" />
+                            <img className="allIcon1" src={folder} alt="folder" />
+                            <img className="allIcon1" src={more} alt="more" />
+                        </div>
                     </div>
                 </div>
             </div>

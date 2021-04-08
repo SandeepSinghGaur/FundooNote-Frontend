@@ -1,49 +1,45 @@
+.registration-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 10px;
+}
 .mainBox1 {
     border: solid lightgray 1px;
     border-radius: 8px;
-    width: 650px;
-    height: 550px;
-    top: 70%;
-    left: 30%;
-    margin-left: 400px;
-    margin-top: 70px;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 20px;
+}
+.register-logo-main{
+    width: 100px;
 }
 
 .mainLogo {
-    float: left;
-    margin-left: 30px;
-    margin-top: 15px;
     font-size: 30px;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px;
 }
 
 .desc-Account {
-    margin-top: 0px;
-    margin-left: 25px;
-    text-align: left;
-    //border: solid;
+
     color: black;
-    font-weight: 600;
     font-size: 22px;
-    clear: left;
 }
-
-.userInfo {
-    margin-top: -250px;
-    height: auto;
-    width: 450px;
-
-
-}
-
 .userInfoLogo {
-    margin-top: 5px;
-    padding-left: 450px;
-    height: 250px;
-    width: 200px;
-
-
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+.userInfo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
 }
 
 #outlined-basic1,
@@ -77,18 +73,15 @@
 }
 
 .a {
-    line-height: 0.5;
-    text-align: left;
-    margin-left: 34px;
+
     margin-top: 10px;
-    color: rgb(78, 76, 78);
-    font-weight: 390;
+
     font-size: 14px;
 }
 
-.userInf {
-    width: 450px;
-}
+// .userInf {
+//     width: 450px;
+// }
 
 .inputCheckBox {
 

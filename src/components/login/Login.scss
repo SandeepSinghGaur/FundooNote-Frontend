@@ -1,36 +1,35 @@
-.mainBox {
+.login-main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 10px;
+}
+.mainBoxLogin {
     border: solid lightgray 1px;
     border-radius: 8px;
-    width: 450px;
-    height: 450px;
-    top: 70%;
-    left: 30%;
-    margin-left: 400px;
-    margin-top: 110px;
-
-}
-.app_name{
-    font-size: 32px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 30px;
 
 }
 
 .signin {
-    line-height: 1;
-    font-weight: 500;
     font-size: 20px;
-    margin-top: -20x;
-    position: absolute;
-    top: 180px;
-    left: 590px;
+    text-align: center;
+
     
 }
 
-#filled-required {
-    border: solid rgb(7, 152, 248);
-    width: 350px;
-    height: 25px;
+#filled-required-Login {
+    border: 1px solid #aaa;
     border-radius: 8px;
     background: white;
+}
+.login-field-div{
+    padding: 10px 0px;
 }
 
 .labelName {
@@ -43,7 +42,7 @@
     padding: 0 4px;
 }
 
-.forgot-email {
+.forgot-email-Login {
 
     text-align: left;
     margin-left: 34px;
@@ -51,13 +50,9 @@
     margin-top: 10px;
 }
 
-.desc {
-    line-height: 0.5;
-    text-align: left;
-    margin-left: 34px;
+.desc-Login {
     margin-top: 10px;
-    color: rgb(78, 76, 78);
-    font-weight: 390;
+    color: #4e4c4e;
     font-size: 14px;
 
 }
@@ -67,24 +62,24 @@
     color: rgb(7, 152, 248);
 }
 
-.create-Account {
-    text-align: left;
-    margin-left: 34px;
-    margin-top: 10px;
-    color: rgb(7, 152, 248);
-    font-weight: 500;
+.create-Account-Login {
+    color: #0798f8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
 
 }
 
-.create-Account button {
-    margin-left: 310px;
-    height: 35px;
-    width: 75px;
-    margin-top: -10px;
-    background: rgb(7, 152, 248);
-    border-radius: 5px;
-    color: white;
-    border: none;
+.create-Account-Login button {
+       /* margin-left: 310px; */
+       height: 35px;
+       width: 75px;
+       /* margin-top: -10px; */
+       background: #0798f8;
+       border-radius: 5px;
+       color: white;
+       border: none;
 
 }
 
@@ -104,5 +99,5 @@
     font-size: 14px;
 }
 .useAccount{
-    margin-top: 20px;
+    padding: 20px 0px;
 }
