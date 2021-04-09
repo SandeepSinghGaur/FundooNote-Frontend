@@ -1,8 +1,15 @@
 import axios from "axios";
 
-export default class axiosServices {
-  Post = (url, data, isHeaderRequired = false,) => {
-    return axios.post(url, data, isHeaderRequired)
-  };
+export default function axiosServices() {
+ 
 
+}
+axiosServices.prototype.post=function(url,data,header,isHeaderReq=false){
+  return axios.post(url,data,header && isHeaderReq)
+}
+axiosServices.prototype.get=function(url,header,isHeaderReq=false){
+  return axios.get(url,header && isHeaderReq)
+}
+axiosServices.prototype.put=function(url,data,header,isHeaderReq=false){
+  return axios.put(url,data,header && isHeaderReq)
 }

@@ -1,8 +1,13 @@
 .login-main-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 100px 10px;
+    border: solid lightgray 1px;
+    border-radius: 8px;
+    width: 450px;
+    height: 500px;
+    //top: 70%;
+    //left: 30%;
+    //margin-left: 400px;
+    //margin-top: 110px;
+    margin: 5% auto;
 }
 .mainBoxLogin {
     border: solid lightgray 1px;
