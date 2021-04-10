@@ -5,13 +5,15 @@ import ForgetPassword from './pages/dashboard-ForgetPassword/Dashboard-ForgetPas
 import Registration from './pages/dashboard-Registration/Dashboard-Registration';
 import Navbar from './pages/dashboard-Navbar/Dashboard-Navbar';
 import Reset from './pages/dashboard-Reset/Dashboard-Reset';
+import AddNote from './pages/dashboard-AddNote/Dashboard-AddNote';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Switch>
-          <Route path="/" exact component={Navbar}/>
+        <Route path="/" exact component={Navbar}/>
+          <Route path="/AddNote" exact component={AddNote}/>
           <Route path="/Registration" exact component={Registration} />
           <Route path="/ForgetPassword" exact component={ForgetPassword} />
           <Route path="/Login" exact component={Login} />

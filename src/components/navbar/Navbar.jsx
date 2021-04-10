@@ -7,190 +7,219 @@ import ReplayOutlinedIcon from "@material-ui/icons/ReplayOutlined";
 import DnsRoundedIcon from "@material-ui/icons/DnsRounded";
 import SettingsSharpIcon from "@material-ui/icons/SettingsOutlined";
 import AppsRoundedIcon from "@material-ui/icons/AppsRounded";
-import IconButton from "@material-ui/core/IconButton";
 import NoteIcon from './../..//assests/NoteIcon.png';
 import EditLabel from './../..//assests/Editlabel.png';
 import ReminderIcon from './../..//assests/Reminder-Icon.png';
 import Archive from './../..//assests/ArchiveIcon.png';
 import Edit from './../..//assests/pencil.png';
 import Trash from './../..//assests/delete.png';
-import TextField from '@material-ui/core/TextField';
-import Pin from './../..//assests/pin note.jpg';
-import collaborator from './../..//assests/contact.png';
-import alarm from './../..//assests/bell-ring-alarm.png';
-import color from './../..//assests/color-palette.png';
-import imageIcon from './../..//assests/imageIcon.png';
-import folder from './../..//assests/folder2.png';
-import more from './../..//assests/more.png';
-import undo from './../..//assests/undo.png';
-import redo from './../..//assests/redo.png';
-import CheckBox from './../..//assests/check-box.png';
-import PaintBrush from './../..//assests/paint-brush.png'
+import IconButton from "@material-ui/core/IconButton";
+import InputBase from "@material-ui/core/InputBase";
+import Button from "@material-ui/core/Button";
+import ImageOutlinedIcon from "@material-ui/icons/ImageOutlined";
+import CheckBoxOutlinedIcon from "@material-ui/icons/CheckBoxOutlined";
+import BrushIcon from "@material-ui/icons/Brush";
+import logoicon from './../..//assests/pin note.jpg';
+import AddAlertOutlinedIcon from "@material-ui/icons/AddAlertOutlined";
+import PersonAddOutlinedIcon from "@material-ui/icons/PersonAddOutlined";
+import ColorLensOutlinedIcon from "@material-ui/icons/ColorLensOutlined";
+import ArchiveOutlinedIcon from "@material-ui/icons/ArchiveOutlined";
+import MoreVertOutlinedIcon from "@material-ui/icons/MoreVertOutlined";
+import UndoIcon from '@material-ui/icons/Undo';
+import RedoIcon from '@material-ui/icons/Redo';
 
+const style = {
+  left: 150,
+};
 
+var checkOpen = "open";
 function Navbar() {
-    const [menuButtonStatus, setMenuButtonStatus] = useState(false)
-    const [popUpButtonStatus, setPopupButtonStatus] = useState(false)
-    const handlePopupClick = () => {
-        if (popUpButtonStatus) {
-            setPopupButtonStatus(false);
-        }
-        else {
-            setPopupButtonStatus(true);
-        }
+
+  const [menuButtonStatus, setMenuButtonStatus] = useState(false)
+  const [open, setOpen] = React.useState(false);
+  const handleMenuClick = () => {
+    if (menuButtonStatus) {
+      setMenuButtonStatus(false);
     }
-    const handleMenuClick = () => {
-        if (menuButtonStatus) {
-            setMenuButtonStatus(false);
-        }
-        else {
-            setMenuButtonStatus(true);
-        }
+    else {
+      setMenuButtonStatus(true);
     }
-    const navIcons = (
-        <div className="sideBar">
-            <div className="notes">
-                <img src={NoteIcon} alt="NoteIcon" />
-                <div className="noteContent">
-                    Notes
-            </div>
-            </div>
-            <div className="notes">
-                <img src={ReminderIcon} alt="ReminderIcon" />
-                <div className="noteContent">
-                    Reminders
-            </div>
-            </div>
+  }
 
-            <div className="notes">
-                <img src={EditLabel} alt="EditLabel" />
-                <div className="noteContent">
-                    Hello Geeks
+  const NotePadOpenClose = () => {
+    if (checkOpen === "close") {
+      setOpen(true);
+      checkOpen = "open";
+    } else if (checkOpen === "open") {
+      setOpen(false);
+      checkOpen = "close";
+    }
+    console.log(checkOpen);
+  };
+
+  const navIcons = (
+    <div className="sideBar">
+      <div className="notes">
+        <img src={NoteIcon} alt="NoteIcon" />
+        <div className="noteContent">
+          Notes
             </div>
+      </div>
+      <div className="notes">
+        <img src={ReminderIcon} alt="ReminderIcon" />
+        <div className="noteContent">
+          Reminders
             </div>
-            <div className="notes">
-                <img src={Edit} alt="Edit" />
-                <div className="noteContent">
-                    Edit labels
+      </div>
+
+      <div className="notes">
+        <img src={EditLabel} alt="EditLabel" />
+        <div className="noteContent">
+          Hello Geeks
             </div>
+      </div>
+      <div className="notes">
+        <img src={Edit} alt="Edit" />
+        <div className="noteContent">
+          Edit labels
             </div>
-            <div className="notes">
-                <img src={Archive} alt="Archive" />
-                <div className="noteContent">
-                    Archive
+      </div>
+      <div className="notes">
+        <img src={Archive} alt="Archive" />
+        <div className="noteContent">
+          Archive
             </div>
+      </div>
+      <div className="notes">
+        <img src={Trash} alt="Trash" />
+        <div className="noteContent">
+          Trash
             </div>
-            <div className="notes">
-                <img src={Trash} alt="Trash" />
-                <div className="noteContent">
-                    Trash
-            </div>
-            </div>
+      </div>
+    </div>
+  )
+  const popBoxOpen = (
+    <div className="contain container1">
+      <div className="note1">
+        <div className="title pd">
+          <InputBase
+            placeholder="Title..."
+            fullWidth
+            name="title"
+          />
+          <IconButton>
+            <img className="logoIcon" src={logoicon} alt="ogoicon" size="small" />
+          </IconButton>
         </div>
-    )
-    const popBoxOpen = (
-        <div className="infoContent">
-            <div className="infoBox">
-                <img className="pinImage" src={Pin} alt="Pin" />
-                <div className="createnote-title">
-                    <TextField id="titleNote" label="Title" InputLabelProps={{ style: { fontSize: '20px', }, }} InputProps={{ disableUnderline: true }} />
-                    <TextField id="takeNote" label="Take a note..." InputProps={{ disableUnderline: true }} />
-                    <div className="iconBox">
-                        <div className="iconContainer">
-                            <img className="allIcon" src={alarm} alt="alarm" />
-                            <img className="allIcon" src={collaborator} alt="collaborator" />
-                            <img className="allIcon" src={color} alt="color" />
-                            <img className="allIcon" src={imageIcon} alt="imageIcon" />
-                            <img className="allIcon" src={folder} alt="folder" />
-                            <img className="allIcon" src={more} alt="more" />
-                            <img className="allIcon" src={undo} alt="undo" />
-                            <img className="allIcon" src={redo} alt="redo" />
+        <div className="note pd">
+          <InputBase
+            placeholder="Take a note..."
+            fullWidth
+            name="description"
+          />
+          <IconButton aria-label="Remind me" edge="start">
+            <AddAlertOutlinedIcon fontSize="small" />
+          </IconButton>
+          <IconButton aria-label="Collaborator">
+            <PersonAddOutlinedIcon fontSize="small" />
+          </IconButton>
+          <IconButton aria-label="Change color" >
+            <ColorLensOutlinedIcon fontSize="small" />
+          </IconButton>
+          <IconButton>
+            <ImageOutlinedIcon />
+          </IconButton>
+          <IconButton aria-label="Archive note">
+            <ArchiveOutlinedIcon fontSize="small" />
+          </IconButton>
+          <IconButton aria-label="More">
+            <MoreVertOutlinedIcon fontSize="small" />
+          </IconButton>
+          <IconButton aria-label="UndoIcon">
+            <UndoIcon fontSize="small" />
+          </IconButton>
+          <IconButton aria-label="RedoIcon">
+            <RedoIcon fontSize="small" />
+          </IconButton>
+          <Button size="small" style={style} onClick={NotePadOpenClose} >
+            Close
+              </Button>
 
-                        </div>
-
-                        <div className="closeIcon"  >Close</div>
-                    </div>
-                </div>
-            </div>
         </div>
+      </div>
+      <br></br>
+    </div>
+  )
 
-    )
-    const titleBoxOpen=(
-        <div className="infoContent1">
-        <div className="infoBox1">
-            <img className="pinImage" src={Pin} alt="Pin" />
-            <div className="createnote-title1">
-                <TextField id="titleNote" label="Title" InputLabelProps={{ style: { fontSize: '20px', }, }} InputProps={{ disableUnderline: true }} />
-                <TextField id="takeNote" label="Take a note..." InputProps={{ disableUnderline: true }} />
-                <div className="iconBox1">
-                    <img className="allIcon1" src={alarm} alt="alarm" />
-                    <img className="allIcon1" src={collaborator} alt="collaborator" />
-                    <img className="allIcon1" src={color} alt="color" />
-                    <img className="allIcon1" src={imageIcon} alt="imageIcon" />
-                    <img className="allIcon1" src={folder} alt="folder" />
-                    <img className="allIcon1" src={more} alt="more" />
-                </div>
-            </div>
-        </div>
+  const titleBoxOpen = (
+    <div className="contain container">
+      <div className="note">
+        <InputBase
+          placeholder="Take a note..."
+          fullWidth
+          onClick={NotePadOpenClose}
+        />
+      </div>
+      <IconButton>
+        <CheckBoxOutlinedIcon />
+      </IconButton>
+      <IconButton>
+        <BrushIcon />
+      </IconButton>
+      <IconButton>
+        <ImageOutlinedIcon />
+      </IconButton>
     </div>
 
-    )
-    return (
-        <div className="navbar">
-            <div className="mainbar">
-                <div className="navbar-main-compo">
-                    <img src={MenuBar} alt="Menubar" className="nav-menubar" onClick={() => handleMenuClick()} />
-                    <img src={GoogleKeepdp} alt="GoogleKeepdp" className="nav-menubar-keepicon" />
-                    <div className="headerTitle">
-                        <span style={{ color: "#0606f8" }}>F</span>
-                        <span style={{ color: "#d10303" }}>u</span>
-                        <span style={{ color: "#f0b000" }}>n</span>
-                        <span style={{ color: "#0606f8" }}>d</span>
-                        <span style={{ color: "green" }}>o</span>
-                        <span style={{ color: "#d10303" }}>o</span>
-                    </div>
-                    <div className="search">
-                        <div className="searchIcon">
-                            <SearchIcon />
-                        </div>
-                        <div className="insideSearch">Search</div>
 
-                    </div>
-                    <IconButton aria-label="open drawer" className="button">
-                        <ReplayOutlinedIcon />
-                    </IconButton>
-
-                    <IconButton aria-label="open drawer" className="button">
-                        <DnsRoundedIcon />
-                    </IconButton>
-
-                    <IconButton aria-label="open drawer" className="button">
-                        <SettingsSharpIcon />
-                    </IconButton>
-
-                    <IconButton aria-label="open drawer" className="button">
-                        <AppsRoundedIcon />
-                    </IconButton>
-
-                </div>
+  )
+  return (
+    <div className="navbar">
+      <div className="mainbar">
+        <div className="navbar-main-compo">
+          <img src={MenuBar} alt="Menubar" className="nav-menubar" onClick={() => handleMenuClick()} />
+          <img src={GoogleKeepdp} alt="GoogleKeepdp" className="nav-menubar-keepicon" />
+          <div className="headerTitle">
+            <span style={{ color: "#0606f8" }}>F</span>
+            <span style={{ color: "#d10303" }}>u</span>
+            <span style={{ color: "#f0b000" }}>n</span>
+            <span style={{ color: "#0606f8" }}>d</span>
+            <span style={{ color: "green" }}>o</span>
+            <span style={{ color: "#d10303" }}>o</span>
+          </div>
+          <div className="search">
+            <div className="searchIcon">
+              <SearchIcon />
             </div>
-        
-                <div className="insidePopUpBox">
-                    <TextField id="takeNote" label="Take a note..." InputProps={{ disableUnderline: true }} onClick={() => handlePopupClick()} />
-                    <div className="popUpBoxIcon">
-                        <img src={CheckBox} alt="CheckBox" className="checkImage" />
-                        <img src={PaintBrush} alt="PaintBrush" className="checkImage" />
-                        <img src={imageIcon} alt="imageIcon" />
-                    </div>
-                </div>
-            
+            <div className="insideSearch">Search</div>
 
-            {menuButtonStatus ? navIcons : null}
-            {popUpButtonStatus ? popBoxOpen : titleBoxOpen}
-           
+          </div>
+          <IconButton aria-label="open drawer" className="button">
+            <ReplayOutlinedIcon />
+          </IconButton>
+
+          <IconButton aria-label="open drawer" className="button">
+            <DnsRoundedIcon />
+          </IconButton>
+
+          <IconButton aria-label="open drawer" className="button">
+            <SettingsSharpIcon />
+          </IconButton>
+
+          <IconButton aria-label="open drawer" className="button">
+            <AppsRoundedIcon />
+          </IconButton>
+
         </div>
+      </div>
 
 
-    )
+      {menuButtonStatus ? navIcons : null}
+      {open ? popBoxOpen : titleBoxOpen}
+
+    </div>
+
+
+  )
 }
 export default Navbar;
