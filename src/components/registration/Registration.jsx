@@ -10,7 +10,8 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import { Link } from 'react-router-dom';
+import { Link,useHistory } from 'react-router-dom';
+import userServices from '../../Services/userServices';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -32,9 +33,38 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
+const services = new userServices();
 export default function Registration() {
+  let history=useHistory();
   const classes = useStyles();
+  const [firstName, setFirstName] = React.useState("");
+  const [lastName, setLastName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [mobile, setMobile] = React.useState("");
+  const handleRegistration = (e) => {
+    e.stopPropagation()
+    let data = {
+      email: email,
+      password: password,
+      firstName:firstName,
+      lastName:lastName,
+      mobile:mobile
+    };
+   registration(data);
+   history.push("/")
+  };
+  const registration=(data)=>{
+    services.SignUp(data)
+    .then((data) => {
+      localStorage.setItem("token",data.data.data);
+      localStorage.getItem("token");
+
+    })
+    .catch((err) => {
+      console.log("Error", err);
+    });
+  }
 
   return (
     <div className="registration-main">
@@ -52,7 +82,7 @@ export default function Registration() {
           <Typography >
             Create Your Fundoo Account
         </Typography>
-          <form className={classes.form} noValidate>
+          <div className={classes.form} noValidate>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
@@ -64,6 +94,7 @@ export default function Registration() {
                   id="firstName"
                   label="First Name"
                   autoFocus
+                  onChange={(e) => setFirstName(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -75,6 +106,7 @@ export default function Registration() {
                   label="Last Name"
                   name="lastName"
                   autoComplete="lname"
+                  onChange={(e) => setLastName(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -86,6 +118,7 @@ export default function Registration() {
                   label="Email Address"
                   name="email"
                   autoComplete="email"
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -98,6 +131,7 @@ export default function Registration() {
                   type="password"
                   id="password"
                   autoComplete="current-password"
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -105,11 +139,12 @@ export default function Registration() {
                   variant="outlined"
                   required
                   fullWidth
-                  name="password"
-                  label="Confirm Password"
-                  type="password"
-                  id="password"
-                  autoComplete="current-password"
+                  name="Mobile"
+                  label="Mobile Number"
+                  type="Mobile"
+                  id="Mobile"
+                  autoComplete="mobile Number"
+                  onChange={(e) => setMobile(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -125,6 +160,7 @@ export default function Registration() {
               variant="contained"
               color="primary"
               className={classes.submit}
+              onClick={(e) => handleRegistration(e)}
             >
               Next
           </Button>
@@ -133,7 +169,7 @@ export default function Registration() {
                 <Link to="/Login">Don't have an account? Sign Up</Link>
               </Grid>
             </Grid>
-          </form>
+          </div>
         </div>
 
       </Container>

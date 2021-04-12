@@ -5,6 +5,7 @@ export default function axiosServices() {
 
 }
 axiosServices.prototype.post = function (url, data, header, isHeaderReq = false) {
+	console.log(url);
 	return axios.post(url, data, header && isHeaderReq)
 }
 axiosServices.prototype.get = function (url, header, isHeaderReq = false) {

@@ -1,6 +1,6 @@
 import './Login.scss'
-import Services from '../../Services/userServices'
-import { Link } from 'react-router-dom';
+//import Services from '../../Services/userServices'
+import { Link, useHistory } from 'react-router-dom';
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -11,9 +11,10 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import userServices from '../../Services/userServices';
 
 
-const services = new Services();
+
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -34,30 +35,36 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3, 0, 2),
   },
 }));
+const services = new userServices();
 export default function Login() {
+  let history=useHistory();
   const classes = useStyles();
 
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
 
-  const handleLogin = () => {
+  const handleLogin = (e) => {
+    e.stopPropagation()
     let data = {
       email: email,
       password: password,
     };
-    services
-      .SignIn(data)
-      .then((data) => {
-        console.log(data);
-        console.log(
-          "Login successful" + JSON.stringify(data.data.result.accessToken)
-        );
-        localStorage.setItem("loginToken", data.data.result.accessToken);
-      })
-      .catch((err) => {
-        console.log("Error", err);
-      });
+   login(data);
+   history.push("/")
   };
+  const login=(data)=>{
+    services.SignIn(data)
+    .then((data) => {
+      localStorage.setItem("token",data.data.data);
+      localStorage.getItem("token");
+
+    })
+    .catch((err) => {
+      console.log("Error", err);
+    });
+  }
+    
+  
 
   return (
     <div className="login-main-container">
@@ -79,7 +86,7 @@ export default function Login() {
           <Typography >
             Use your Fundoo Account
         </Typography>
-          <form className={classes.form} noValidate>
+          <div className={classes.form}>
             <TextField
               variant="outlined"
               margin="normal"
@@ -88,8 +95,6 @@ export default function Login() {
               id="email"
               label="Email Address"
               name="email"
-              autoComplete="email"
-              autoFocus
               onChange={(e) => setEmail(e.target.value)}
             />
             <TextField
@@ -101,7 +106,6 @@ export default function Login() {
               label="Password"
               type="password"
               id="password"
-              autoComplete="current-password"
               onChange={(e) => setPassword(e.target.value)}
             />
             <FormControlLabel
@@ -114,7 +118,7 @@ export default function Login() {
               variant="contained"
               color="primary"
               className={classes.submit}
-              onClick={handleLogin}
+              onClick={(e) => handleLogin(e)}
             >
               Sign In
           </Button>
@@ -126,7 +130,7 @@ export default function Login() {
                 <Link to="/ForgetPassword">Forget email?</Link>
               </Grid>
             </Grid>
-          </form>
+          </div>
         </div>
       </Container>
     </div>

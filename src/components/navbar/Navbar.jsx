@@ -32,7 +32,7 @@ const style = {
   left: 150,
 };
 
-var checkOpen = "open";
+let checkOpen = "open";
 function Navbar() {
 
   const [menuButtonStatus, setMenuButtonStatus] = useState(false)
@@ -50,7 +50,8 @@ function Navbar() {
     if (checkOpen === "close") {
       setOpen(true);
       checkOpen = "open";
-    } else if (checkOpen === "open") {
+    }
+    else if (checkOpen === "open") {
       setOpen(false);
       checkOpen = "close";
     }

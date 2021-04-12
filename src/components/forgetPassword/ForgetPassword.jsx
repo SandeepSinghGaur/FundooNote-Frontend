@@ -11,6 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { Link } from 'react-router-dom';
+import userServices from '../../Services/userServices';
 
 
 
@@ -33,9 +34,27 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3,0, 2),
   },
 }));
-
+const services = new userServices();
 export default function ForgetPassword() {
   const classes = useStyles();
+  const [email, setEmail] = React.useState("");
+  const handleForgetPassword = (e) => {
+    e.stopPropagation()
+    // let data = {
+    //   email: email,
+    // };
+   forget(email);
+  };
+
+  const forget=(data)=>{
+    services.ForgetPassword(data)
+    .then((data) => {
+      console.log("Mail Send successfully" + data)
+    })
+    .catch((err) => {
+      console.log("Error", err);
+    });
+  }
 
   return (
     <div className="mainBox-Forget">
@@ -56,7 +75,7 @@ export default function ForgetPassword() {
         <Typography >
           Recover your Fundoo Account
         </Typography>
-        <form className={classes.form} noValidate>
+        <div className={classes.form} noValidate>
           <TextField
             variant="outlined"
             margin="normal"
@@ -67,6 +86,7 @@ export default function ForgetPassword() {
             name="email"
             autoComplete="email"
             autoFocus
+            onChange={(e) => setEmail(e.target.value)}
           />
           
           <FormControlLabel
@@ -79,6 +99,7 @@ export default function ForgetPassword() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={(e) => handleForgetPassword(e)}
           >
             Next
           </Button>
@@ -87,7 +108,7 @@ export default function ForgetPassword() {
             <Link to="/Reset">Forget Password?</Link>
             </Grid>
           </Grid>
-        </form>
+        </div>
       </div>
     </Container>
     </div>

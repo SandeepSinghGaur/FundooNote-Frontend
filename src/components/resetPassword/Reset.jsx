@@ -50,7 +50,7 @@ export default function Reset() {
                     <Typography component="h1" variant="h5">
                         Reset Password
                     </Typography>
-                    <form className={classes.form} noValidate>
+                    <div className={classes.form} noValidate>
                         <TextField
                             variant="outlined"
                             margin="normal"
@@ -86,7 +86,7 @@ export default function Reset() {
                         >
                             Reset Password
                          </Button>
-                    </form>
+                    </div>
                 </div>
             </Container>
         </div>
