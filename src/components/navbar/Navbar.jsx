@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import GoogleKeepdp from './../..//assests/GoogleKeepdp.png';
 import MenuBar from './../..//assests/menuBar.png';
 import './Navbar.scss';
@@ -27,16 +27,41 @@ import ArchiveOutlinedIcon from "@material-ui/icons/ArchiveOutlined";
 import MoreVertOutlinedIcon from "@material-ui/icons/MoreVertOutlined";
 import UndoIcon from '@material-ui/icons/Undo';
 import RedoIcon from '@material-ui/icons/Redo';
+import userServices from '../../Services/userServices';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
 
 const style = {
   left: 150,
 };
 
 let checkOpen = "open";
-function Navbar() {
+const services = new userServices();
 
+function Navbar(props) {
   const [menuButtonStatus, setMenuButtonStatus] = useState(false)
   const [open, setOpen] = React.useState(false);
+  const [myNote, setMyNote] = React.useState([]);
+  useEffect(() => {
+    getNotes();
+  }, [])
+
+
+  
+  const getNotes = () => {
+    services.GetAllNotes()
+      .then((data) => {
+        console.log(data.data.data);
+        setMyNote(data.data.data)
+
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   const handleMenuClick = () => {
     if (menuButtonStatus) {
       setMenuButtonStatus(false);
@@ -57,6 +82,52 @@ function Navbar() {
     }
     console.log(checkOpen);
   };
+  const displayNotes = () => {
+    return (
+      <div className="mainDisplayDiv">
+      {myNote.map(key => (
+      <div className="containBox containerBox1" key={key.noteId}>
+          <div className="note2" >
+            <div className="title pd">
+              <InputBase
+                placeholder="Title..."
+                value={key.title}
+                fullWidth
+                name="title"
+              />
+              <IconButton>
+                <img className="logoIcon" src={logoicon} alt="ogoicon" size="small" />
+              </IconButton>
+            </div>
+            <div className="note pd">
+              <InputBase
+                placeholder="Take a note..."
+                value={key.description}
+                fullWidth
+                name="description"
+              />
+              <IconButton aria-label="Remind me" edge="start">
+                <AddAlertOutlinedIcon fontSize="small" />
+              </IconButton>
+              <IconButton aria-label="Collaborator">
+                <PersonAddOutlinedIcon fontSize="small" />
+              </IconButton>
+              <IconButton aria-label="Change color" >
+                <ColorLensOutlinedIcon fontSize="small" />
+              </IconButton>
+              <IconButton>
+                <ImageOutlinedIcon />
+              </IconButton>
+            </div>
+          </div>
+        
+        <br></br>
+      </div>
+      ))}
+      </div>
+
+    )
+  }
 
   const navIcons = (
     <div className="sideBar">
@@ -217,6 +288,10 @@ function Navbar() {
 
       {menuButtonStatus ? navIcons : null}
       {open ? popBoxOpen : titleBoxOpen}
+      {displayNotes()}
+
+
+
 
     </div>
 

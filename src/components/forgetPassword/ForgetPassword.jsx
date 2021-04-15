@@ -40,12 +40,8 @@ export default function ForgetPassword() {
   const [email, setEmail] = React.useState("");
   const handleForgetPassword = (e) => {
     e.stopPropagation()
-    // let data = {
-    //   email: email,
-    // };
    forget(email);
   };
-
   const forget=(data)=>{
     services.ForgetPassword(data)
     .then((data) => {

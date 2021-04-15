@@ -5,7 +5,8 @@ export default class userServices {
     constructor() {
         this.header = {
             headers: {
-                'token': localStorage.getItem("token")
+                'Authorization': localStorage.getItem("token"),
+                //'content-type':'application/json'
             }
         }
     }
@@ -22,6 +23,11 @@ export default class userServices {
 		return axiosService.get(`https://localhost:5001/api/User/ForgotPassword/${data}`);
         
 	};
+    GetAllNotes=()=>{
+        console.log(`Bearer ${localStorage.getItem('token')}`);
+        return axiosService.get("https://localhost:5001/api/Note",{ headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}`}});
+           
+    }
 
 }
 
