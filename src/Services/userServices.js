@@ -1,12 +1,10 @@
 import axiosServices from "./axiosServices";
-//const baseUrl = process.env.REACT_APP_API
 const axiosService=new axiosServices();
 export default class userServices {
     constructor() {
         this.header = {
             headers: {
                 'Authorization': localStorage.getItem("token"),
-                //'content-type':'application/json'
             }
         }
     }
@@ -26,6 +24,11 @@ export default class userServices {
     GetAllNotes=()=>{
         console.log(`Bearer ${localStorage.getItem('token')}`);
         return axiosService.get("https://localhost:5001/api/Note",{ headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}`}});
+           
+    }
+    GetAllTrashNotes=()=>{
+        console.log(`Bearer ${localStorage.getItem('token')}`);
+        return axiosService.get("https://localhost:5001/api/Note/GetAllTrashNote",{ headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}`}});
            
     }
 

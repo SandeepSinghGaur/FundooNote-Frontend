@@ -28,11 +28,6 @@ import MoreVertOutlinedIcon from "@material-ui/icons/MoreVertOutlined";
 import UndoIcon from '@material-ui/icons/Undo';
 import RedoIcon from '@material-ui/icons/Redo';
 import userServices from '../../Services/userServices';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
 
 const style = {
   left: 150,
@@ -41,16 +36,24 @@ const style = {
 let checkOpen = "open";
 const services = new userServices();
 
-function Navbar(props) {
+function Navbar() {
   const [menuButtonStatus, setMenuButtonStatus] = useState(false)
   const [open, setOpen] = React.useState(false);
   const [myNote, setMyNote] = React.useState([]);
   useEffect(() => {
     getNotes();
   }, [])
+  const getTrashNotes = () => {
+    services.GetAllTrashNotes()
+      .then((data) => {
+        console.log(data.data.data);
+        setMyNote(data.data.data)
 
-
-  
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   const getNotes = () => {
     services.GetAllNotes()
       .then((data) => {
@@ -133,7 +136,7 @@ function Navbar(props) {
     <div className="sideBar">
       <div className="notes">
         <img src={NoteIcon} alt="NoteIcon" />
-        <div className="noteContent">
+        <div className="noteContent" onClick={(e)=>getNotes(e)}>
           Notes
             </div>
       </div>
@@ -164,7 +167,7 @@ function Navbar(props) {
       </div>
       <div className="notes">
         <img src={Trash} alt="Trash" />
-        <div className="noteContent">
+        <div className="noteContent" onClick={(e)=>getTrashNotes(e)}>
           Trash
             </div>
       </div>
