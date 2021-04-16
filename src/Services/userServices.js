@@ -31,6 +31,11 @@ export default class userServices {
         return axiosService.get("https://localhost:5001/api/Note/GetAllTrashNote",{ headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}`}});
            
     }
+    GetAllArchiveNotes=()=>{
+        console.log(`Bearer ${localStorage.getItem('token')}`);
+        return axiosService.get("https://localhost:5001/api/Note/GetAllArchiveNote",{headers:{'Authorization': `Bearer ${localStorage.getItem('token')}`}});
+
+    }
 
 }
 

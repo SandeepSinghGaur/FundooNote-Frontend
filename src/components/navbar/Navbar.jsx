@@ -43,6 +43,17 @@ function Navbar() {
   useEffect(() => {
     getNotes();
   }, [])
+  const getArchiveNotes = () => {
+    services.GetAllArchiveNotes()
+      .then((data) => {
+        console.log(data.data.data);
+        setMyNote(data.data.data)
+
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   const getTrashNotes = () => {
     services.GetAllTrashNotes()
       .then((data) => {
@@ -161,7 +172,7 @@ function Navbar() {
       </div>
       <div className="notes">
         <img src={Archive} alt="Archive" />
-        <div className="noteContent">
+        <div className="noteContent" onClick={(e)=>getArchiveNotes(e)}>
           Archive
             </div>
       </div>
