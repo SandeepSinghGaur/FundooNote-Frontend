@@ -42,8 +42,9 @@ export default class userServices {
          return axiosService.post(`https://localhost:5001/api/Note`, data,{headers:{'Authorization': `Bearer ${localStorage.getItem('token')}`}});
      }
 
-     deleteNotes(noteId){
-        return axiosService.post(`https://localhost:5001/api/Note/noteId`,{headers:{'Authorization':`Bearer ${localStorage.getItem('token')}`}});
+     deleteNotes(data){
+        console.log("This is DeleteNotes part", data);
+        return axiosService.Delete(`https://localhost:5001/api/Note/data.noteId`,{headers:{'Authorization':`Bearer ${localStorage.getItem('token')}`}});
 }
 
 }

@@ -121,7 +121,7 @@ function Navbar() {
         </div>
       </div>
      {menuButtonStatus ? navIcons : null}
-     <AddNote/>
+     <AddNote notes={myNote}/>
      <DisplayNote notes={myNote}/>
     </div>
   )

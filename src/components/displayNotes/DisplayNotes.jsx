@@ -9,7 +9,7 @@ export default function DisplayNotes(props) {
   return (
     <div>
       <div className="mainDisplayDiv">
-        {props.notes.map(key=>(
+        {props.notes.filter((data) => data.isTrash === false).filter((data) => data.isArchive === false).map(key=>(
           <div className="containBox containerBox1" key={key.noteId} >
             <div className="note2" >
               <div className="title pd">
@@ -20,7 +20,7 @@ export default function DisplayNotes(props) {
                   name="title"
                 />
                 <IconButton>
-                  <img className="logoIcon" src={logoicon} alt="ogoicon" size="small" />
+                  <img className="logoIcon" src={logoicon} alt="logoicon" size="small" />
                 </IconButton>
               </div>
               <div className="note pd">

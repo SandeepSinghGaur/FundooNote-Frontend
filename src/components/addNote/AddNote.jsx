@@ -12,7 +12,7 @@ import userServices from '../../Services/userServices';
 
 var checkOpen = "open";
 
-export default function AddNote() {
+export default function AddNote(props) {
   const services = new userServices();
 
   const [open, setOpen] = React.useState(false);
@@ -23,7 +23,7 @@ export default function AddNote() {
     e.stopPropagation()
     let data = {
       title: title,
-      description: description,
+      description:description,
     };
    addNote(data);
   };
@@ -76,7 +76,6 @@ export default function AddNote() {
             Close
               </Button>
             <DisplayIcons/>
-           
           </div>
           <br></br>
         </div>
