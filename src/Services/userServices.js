@@ -1,3 +1,4 @@
+
 import axiosServices from "./axiosServices";
 const axiosService=new axiosServices();
 export default class userServices {
@@ -36,6 +37,14 @@ export default class userServices {
         return axiosService.get("https://localhost:5001/api/Note/GetAllArchiveNote",{headers:{'Authorization': `Bearer ${localStorage.getItem('token')}`}});
 
     }
+    AddNotes(data) {
+        console.log("This is AddNotes part", data);
+         return axiosService.post(`https://localhost:5001/api/Note`, data,{headers:{'Authorization': `Bearer ${localStorage.getItem('token')}`}});
+     }
+
+     deleteNotes(noteId){
+        return axiosService.post(`https://localhost:5001/api/Note/noteId`,{headers:{'Authorization':`Bearer ${localStorage.getItem('token')}`}});
+}
 
 }
 

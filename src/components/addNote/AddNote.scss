@@ -69,3 +69,21 @@
     display: flex;
     padding-left: 10px;
 }
+.MuiIconButton-edgeStart {
+    margin-left: 2px;
+}
+.closeButton{
+    float: right;
+    padding-right: 20%;
+    margin-left: 50%;
+    
+}
+.MuiButton-label {
+    width: 100%;
+    display: inherit;
+    align-items: inherit;
+    justify-content: inherit;
+    padding-right: 41px;
+    padding-top: 12px;
+
+}

@@ -56,7 +56,7 @@ export default function Login() {
     services.SignIn(data)
     .then((data) => {
       localStorage.setItem("token",data.data.data);
-      localStorage.getItem("token");
+     // localStorage.getItem("token");
 
     })
     .catch((err) => {
