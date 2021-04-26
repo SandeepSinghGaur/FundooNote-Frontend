@@ -11,11 +11,11 @@ axiosServices.prototype.post = function (url, data, isHeaderReq = false) {
 axiosServices.prototype.get = function (url,  isHeaderReq = false) {
 	return axios.get(url, isHeaderReq)
 }
-axiosServices.prototype.put = function (url, data, header, isHeaderReq = false) {
-	return axios.put(url, data, header && isHeaderReq)
+axiosServices.prototype.put = function (url,data, isHeaderReq = false) {
+	return axios.put(url, data,  isHeaderReq)
 }
-axiosServices.prototype.Delete = function (url, header,isHeaderRequired = false) {
-	return axios.delete(url, header && isHeaderRequired);
+axiosServices.prototype.Delete = function (url, isHeaderRequired = false) {
+	return axios.delete(url,isHeaderRequired);
 };
 
 
