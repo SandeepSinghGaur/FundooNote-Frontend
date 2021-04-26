@@ -12,7 +12,7 @@ import userServices from '../../Services/userServices';
 
 var checkOpen = "open";
 
-export default function AddNote(props) {
+export default function AddNote() {
   const services = new userServices();
 
   const [open, setOpen] = React.useState(false);

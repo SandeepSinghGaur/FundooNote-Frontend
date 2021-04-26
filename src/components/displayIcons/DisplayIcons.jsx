@@ -27,6 +27,7 @@ function DisplayIcons(props) {
     let data = {
       title: title,
       description:description,
+      noteId: props.pass,
     };
    updateNote(data);
   };
@@ -133,7 +134,7 @@ function DisplayIcons(props) {
             <Button onClick={handleClose1} color="primary">
               Cancel
           </Button>
-            <Button onClick={handleClose1} color="primary">
+            <Button onClick={(e)=>{handleClose1();handleUpdateNote(e)}} color="primary">
               Update Note
           </Button>
           </DialogActions>
